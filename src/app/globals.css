@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Roboto:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=PT+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #FDFBF2;
-  --foreground: #333333;
   --navy: #11133D;
-  --green: #2e9f48;
+  --green: #2E9F48;
+  --cream: #FDFBF2;
+  --services-bg: #EBEBEB;
+  --background: #FDFBF2;
+  --foreground: #000000;
   --green-light: #61CE70;
   --accent: #6EC1E4;
-  --cream: #FDFBF2;
-  --gray-section: #EBEBEB;
+  --dark-navy-alt: #091441;
+  --green-hover: #33CC33;
 }
 
 @theme inline {
@@ -20,23 +22,146 @@
   --color-green-light: var(--green-light);
   --color-accent: var(--accent);
   --color-cream: var(--cream);
-  --color-gray-section: var(--gray-section);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-services-bg: var(--services-bg);
   --font-heading: 'PT Sans Caption', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --font-body: Tahoma, Geneva, Verdana, sans-serif;
+  --font-pt-sans: 'PT Sans', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--cream);
   color: var(--foreground);
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.3em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'PT Sans Caption', sans-serif;
+}
+
+/* Icon box "framed" style */
+.icon-box-framed {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-box-framed .icon-wrap {
+  width: 50px;
+  height: 50px;
+  border: 2px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-box-framed .icon-wrap svg {
+  width: 25px;
+  height: 25px;
+}
+
+/* Navy button standard */
+.btn-navy {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--navy);
+  color: #FFFFFF;
+  border: 2px solid var(--navy);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+  background-color: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+/* Green button standard */
+.btn-green {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--green);
+  color: #FFFFFF;
+  border: 2px solid var(--green);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+  background-color: transparent;
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* Hero CTA button with pulse */
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background-color: var(--navy);
+  color: #FFFFFF;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse-new 1.7s ease infinite;
+}
+
+.btn-hero:hover {
+  background-color: #FFFFFFFA;
+  color: var(--navy);
+}
+
+@keyframes pulse-new {
+  0%, 5% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  15% { transform: scale(1); }
+  20% { transform: scale(1.1); }
+  25% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  35%, 100% { transform: scale(1); }
+}
+
+/* Service card */
+.service-card {
+  border: 1px solid var(--navy);
+  padding: 24px 16px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.service-card .service-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+  color: var(--navy);
+}
+
+.service-card h4 {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.4;
 }
