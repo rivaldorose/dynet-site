@@ -3,108 +3,131 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Projecten - Dynet Electric",
+  title: "Projecten - Dynet Infratechniek",
   description:
-    "Bekijk onze projecten op het gebied van elektrische laadoplossingen, LED lichttechniek en glasvezel infrastructuur.",
+    "Onze projecten op het gebied van glasvezel, infratechniek en elektrische installaties door heel Nederland.",
 };
-
-const projects = [
-  {
-    title: "Elektrische Laadinfrastructuur",
-    description:
-      "Leveren, plaatsen en gebruiksklaar maken van elektrische laadstations voor bedrijventerreinen en parkeergarages door heel Nederland.",
-    image: "/images/services/emobility.webp",
-    category: "E-Mobiliteit",
-  },
-  {
-    title: "Openbare LED Verlichting",
-    description:
-      "Vervanging van bestaande straatverlichting door energie zuinige LED armaturen. Inclusief conditie-bepaling, installatie en onderhoud.",
-    image: "/images/services/hoogwerker.webp",
-    category: "Lichttechniek",
-  },
-  {
-    title: "Elektrische Installaties",
-    description:
-      "Complete elektrische installaties voor zowel de particuliere als zakelijke markt, conform NEN 1010 en NEN 3410 voorwaarden.",
-    image: "/images/services/electriciteit.webp",
-    category: "Installaties",
-  },
-  {
-    title: "Glasvezel Infrastructuur",
-    description:
-      "Aanleg van glasvezelnetwerken voor snelle en betrouwbare connectiviteit. Van woningen tot bedrijventerreinen.",
-    image: "/images/services/glasvezel.webp",
-    category: "Glasvezel",
-  },
-  {
-    title: "Hybride Energieoplossingen",
-    description:
-      "Implementatie van hybride energiesystemen die traditionele en duurzame energiebronnen combineren voor optimale efficiëntie.",
-    image: "/images/services/hybride.webp",
-    category: "Energie",
-  },
-  {
-    title: "All-Electric Woningen",
-    description:
-      "Volledige elektrificatie van woningen als onderdeel van de energietransitie naar een fossielbrandstof vrij Nederland.",
-    image: "/images/allelectric.jpg",
-    category: "Woningen",
-  },
-];
 
 export default function ProjectenPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[300px] flex items-center">
+      <section className="relative h-[300px] flex items-end pb-12">
         <Image
           src="/images/hero.jpg"
-          alt="Projecten Dynet Electric"
+          alt="Projecten"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-navy-dark/70" />
+        <div className="absolute inset-0 bg-navy/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl md:text-[45px] font-bold text-white">
             Projecten
           </h1>
-          <p className="text-gray-200 mt-4 text-lg">
-            Een overzicht van onze werkzaamheden en specialisaties
+          <p className="text-gray-200 mt-3">
+            Een overzicht van onze werkzaamheden en werkgebieden
           </p>
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20 bg-white">
+      {/* Project locations */}
+      <section className="py-16 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-navy mb-6">
+                Onze werkgebieden
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Dynet is gespecialiseerd in de aanleg van glasvezel, mobiele
+                aansluitingen en allerlei soorten kabel verbindingen. Wij zijn
+                actief in de volgende gebieden:
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  "Amsterdam",
+                  "Rotterdam",
+                  "Utrecht",
+                  "Wageningen",
+                  "Zwolle",
+                  "Drachten",
+                  "Heerenveen",
+                  "Winsum",
+                  "Groningen",
+                  "Rotterdam Maasvlakte",
+                ].map((city) => (
+                  <div key={city} className="flex items-center gap-2 text-gray-600">
+                    <svg
+                      className="w-4 h-4 text-green shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {city}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <Image
+                src="/images/kaart-nederland.png"
+                alt="Werkgebied Nederland"
+                width={600}
+                height={700}
+                className="w-full max-w-sm mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services overview */}
+      <section className="py-16 bg-gray-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy mb-8 text-center">
+            Onze specialisaties
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Glasvezel (FttH)",
+                desc: "Fiber-to-the-Home aansluitingen voor woningen en bedrijven.",
+                image: "/images/services/glasvezel.webp",
+              },
+              {
+                title: "Elektrische Installaties",
+                desc: "Complete elektrische installaties conform NEN 1010 en NEN 3410.",
+                image: "/images/services/electriciteit.webp",
+              },
+              {
+                title: "LED Lichttechniek",
+                desc: "Vervangen en onderhouden van openbare verlichting met LED.",
+                image: "/images/services/hoogwerker.webp",
+              },
+            ].map((project) => (
               <div
                 key={project.title}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group border border-gray-100"
+                className="bg-cream rounded-lg overflow-hidden shadow-sm"
               >
-                <div className="h-56 relative overflow-hidden">
+                <div className="h-48 relative">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-green text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-navy-dark mb-3">
+                  <h3 className="text-lg font-bold text-navy mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
+                  <p className="text-gray-600 text-sm">{project.desc}</p>
                 </div>
               </div>
             ))}
@@ -113,18 +136,17 @@ export default function ProjectenPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-navy-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+      <section className="py-12 bg-navy text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-white mb-4">
             Heeft u een project voor ons?
           </h2>
-          <p className="text-gray-300 mb-8">
-            Neem contact met ons op om uw project te bespreken. Wij denken graag
-            met u mee.
+          <p className="text-gray-300 mb-6">
+            Neem contact met ons op om uw project te bespreken.
           </p>
           <Link
             href="/contact"
-            className="inline-block px-8 py-3.5 bg-green text-white rounded-lg font-semibold hover:bg-green-light transition-colors text-lg"
+            className="inline-block px-8 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
           >
             Contact opnemen
           </Link>

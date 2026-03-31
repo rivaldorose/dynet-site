@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Dynet Electric - Elektrische Installatiemogelijkheden",
+  title: "Dynet Infratechniek - Wij verzorgen de verbinding van morgen",
   description:
-    "DYNET ELECTRIC verzorgt oplossingen in de vraag naar elektrische installatiemogelijkheden voor de particuliere als voor de zakelijke markt.",
+    "Dynet is gespecialiseerd in het aanleggen van glasvezelverbindingen, elektrische installaties en infratechniek voor heel Nederland.",
   icons: {
     icon: "/images/favicon.png",
   },
@@ -24,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="nl" className="h-full antialiased">
+      <body className="min-h-full flex flex-col bg-cream">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

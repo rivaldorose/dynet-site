@@ -1,33 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Roboto:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --navy: #1a1a3e;
-  --navy-dark: #0f0f2a;
+  --background: #FDFBF2;
+  --foreground: #333333;
+  --navy: #11133D;
   --green: #2e9f48;
-  --green-light: #3abf5a;
-  --green-dark: #1e7a33;
+  --green-light: #61CE70;
+  --accent: #6EC1E4;
+  --cream: #FDFBF2;
+  --gray-section: #EBEBEB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-navy: var(--navy);
-  --color-navy-dark: var(--navy-dark);
   --color-green: var(--green);
   --color-green-light: var(--green-light);
-  --color-green-dark: var(--green-dark);
+  --color-accent: var(--accent);
+  --color-cream: var(--cream);
+  --color-gray-section: var(--gray-section);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: 'PT Sans Caption', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: var(--cream);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Sans Caption', sans-serif;
 }

@@ -1,323 +1,265 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const services = [
-  {
-    title: "Elektrische Laadoplossingen",
-    description:
-      "Leveren, aansluiten en gebruiksklaar maken van elektrische laadoplossingen voor heel Nederland. Zowel voor de zakelijke als particuliere markt.",
-    image: "/images/services/emobility.webp",
-  },
-  {
-    title: "LED Lichttechniek",
-    description:
-      "Energie zuinige LED verlichting voor het verduurzamen van het openbare lichtnetwerk. Vervangen en onderhouden van straatverlichting.",
-    image: "/images/services/hoogwerker.webp",
-  },
-  {
-    title: "Elektrische Installaties",
-    description:
-      "Complete elektrische installaties uitgevoerd door gespecialiseerde elektromonteurs conform NEN 1010 en NEN 3410 voorwaarden.",
-    image: "/images/services/electriciteit.webp",
-  },
-  {
-    title: "Glasvezel & Infra",
-    description:
-      "Aanleg en onderhoud van glasvezelnetwerken en bijbehorende infrastructuur voor een toekomstbestendig Nederland.",
-    image: "/images/services/glasvezel.webp",
-  },
-];
-
-const partners = [
-  { name: "Shell", logo: "/images/partners/shell.svg" },
-  { name: "Shell Recharge", logo: "/images/partners/shell-recharge.svg" },
-  { name: "Alfen", logo: "/images/partners/alfen.svg" },
-  { name: "BAM", logo: "/images/partners/bam.svg" },
-  { name: "BMW", logo: "/images/partners/bmw.svg" },
-  { name: "Vestel", logo: "/images/partners/vestel.svg" },
-];
-
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center">
+      <section className="relative h-[500px] md:h-[600px] flex items-center">
         <Image
           src="/images/hero.jpg"
-          alt="Dynet Electric - Smart City"
+          alt="Dynet Infratechniek"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-navy-dark/70" />
+        <div className="absolute inset-0 bg-navy/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              DYNET <span className="text-green">ELECTRIC</span>
+            <h1 className="text-3xl md:text-[57px] font-bold text-white mb-4 leading-tight">
+              DYNET INFRATECHNIEK
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              Verzorgt oplossingen in de vraag naar elektrische
-              installatiemogelijkheden voor de particuliere als voor de zakelijke
-              markt.
+            <p className="text-base md:text-lg text-gray-200 mb-8 leading-relaxed">
+              Specialist in het aanleggen van glas en koperaansluitingen.
+              <br />
+              Wij verbinden centrum gebieden en woonwijken doormiddel van
+              glasvezel
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/contact"
-                className="px-8 py-3.5 bg-green text-white rounded-lg font-semibold hover:bg-green-light transition-colors text-lg"
+                href="/prijsvergelijker"
+                className="px-6 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
               >
-                Contact opnemen
+                Vergelijk uw prijzen
               </Link>
               <Link
-                href="/projecten"
-                className="px-8 py-3.5 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
+                href="/afspraak-maken"
+                className="px-6 py-3 border-2 border-white text-white rounded font-medium hover:bg-white/10 transition-colors"
               >
-                Onze projecten
+                Maak een afspraak
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="dynetelectric" className="py-20 bg-white">
+      {/* Over ons Section */}
+      <section id="overons" className="py-16 md:py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-6">
-                Over <span className="text-green">Dynet Electric</span>
-              </h2>
+              <h3 className="text-xl md:text-2xl font-bold text-navy mb-6">
+                Wij leggen de verbinding van morgen
+              </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>DYNET ELECTRIC</strong> is de
-                elektro-ingenieursafdeling van{" "}
-                <strong>DYNET INFRATECHNIEK</strong>. Zij zorgt voor oplossingen
-                in de vraag naar elektrische installatiemogelijkheden voor de
-                particuliere als voor de zakelijke markt.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Door de oplopende vraag en belangstelling voor de hedendaagse en
-                toekomstige energietransitie, die Nederland fossielbrandstof
-                vrij moet maken, heeft DYNET ELECTRIC zich toegespitst om deze
-                vraagstelling eigen te maken.
+                Dynet is een vooraanstaand Nederlands bedrijf dat gespecialiseerd
+                is in het aanleggen van glasvezelverbindingen. Onze focus ligt
+                voornamelijk op het aansluiten van centrumgebieden en
+                woonwijken, waarbij we gebruikmaken van de Fiber-to-the-Home
+                technologie. Daarnaast zorgen we er doorgaans ook voor dat
+                zakelijke panden binnen het gebied worden aangesloten op ons
+                netwerk.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                DYNET ELECTRIC bestaat uit ingenieurs en gespecialiseerde
-                elektromonteurs, die voldoen aan de huidige NEN 1010 en NEN 3410
-                voorwaarden.
+                Onze missie is om heel Nederland te voorzien van snelle en
+                betrouwbare verbindingen. We zijn van mening dat iedereen recht
+                heeft op toegang tot glasvezel, daarom streven we ernaar om niet
+                alleen centrumgebieden, maar ook buitengebieden aan te sluiten.
               </p>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 text-green font-semibold hover:text-green-dark transition-colors"
+                href="/#overons"
+                className="inline-block px-6 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
               >
-                Neem contact op
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+                Over ons
               </Link>
             </div>
-            <div className="relative">
+            <div>
+              <Image
+                src="/images/glasvezel-2.jpg"
+                alt="Glasvezelaanleg"
+                width={1080}
+                height={675}
+                className="rounded-lg shadow-lg w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Duurzaamheid Section */}
+      <section id="duurzaamheid" className="py-16 md:py-24 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
               <Image
                 src="/images/bus-ev.jpg"
-                alt="Elektrisch busje Dynet"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-green text-white p-6 rounded-xl shadow-lg hidden md:block">
-                <p className="text-3xl font-bold">NEN</p>
-                <p className="text-sm">1010 & 3410 gecertificeerd</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-4">
-              Onze <span className="text-green">Diensten</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              DYNET ELECTRIC heeft zich gespecialiseerd in het leveren,
-              aansluiten en gebruiksklaar maken van diverse elektrische
-              oplossingen.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
-              >
-                <div className="h-48 relative overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-navy-dark mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-navy-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "NEN 1010", label: "Gecertificeerd" },
-              { value: "NEN 3410", label: "Gecertificeerd" },
-              { value: "100%", label: "Veilig & verzekerd" },
-              { value: "NL", label: "Landelijk dekkend" },
-            ].map((stat) => (
-              <div key={stat.label + stat.value}>
-                <p className="text-3xl md:text-4xl font-bold text-green mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-gray-300 text-sm">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-dark text-center mb-4">
-            Onze <span className="text-green">Opdrachtgevers</span>
-          </h2>
-          <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">
-            Wij werken samen met toonaangevende bedrijven in de energie- en
-            mobiliteitssector.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            {partners.map((partner) => (
-              <div
-                key={partner.name}
-                className="flex items-center justify-center p-6 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all"
-              >
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={120}
-                  height={60}
-                  className="h-12 w-auto object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Lichttechniek Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <Image
-                src="/images/services/hoogwerker.webp"
-                alt="Hoogwerker LED verlichting"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-xl"
+                alt="Dynet busje"
+                width={1024}
+                height={576}
+                className="rounded-lg shadow-lg w-full"
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-dark mb-6">
-                <span className="text-green">Licht</span>techniek
-              </h2>
+              <h3 className="text-xl md:text-2xl font-bold text-navy mb-6">
+                Dynet kiest voor duurzaamheid
+              </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Energie zuinige LED is het antwoord op het verduurzamen van het
-                openbare lichtnetwerk van Nederland. De bestaande openbare
-                lichtarmaturen (straatverlichting) worden vervangen door energie
-                zuinige LED verlichting.
+                Bij Dynet nemen we onze verantwoordelijkheid voor het milieu
+                serieus. We zijn er trots op te kunnen zeggen dat ons pand
+                volledig klimaatneutraal is. Dit betekent dat we geen negatieve
+                invloed hebben op het klimaat met onze dagelijkse activiteiten.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Om ons personeel en materieel snel en efficiënt te vervoeren,
+                maken we gebruik van bakfietsen voor korte afstanden. We zijn
+                zelfs bezig met het overstappen naar elektrische en hybride
+                voertuigen. Op die manier minimaliseren we onze CO2-uitstoot en
+                dragen we bij aan een duurzame toekomst.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Wij beschikken over verschillende hoogwerkers waardoor wij
-                gemakkelijk op een hoogte van 4 of 6 meter de lichtarmaturen
-                kunnen vervangen en onderhouden.
+                Bij Dynet gaan we verder dan alleen zorgen voor tevreden klanten.
+                We zetten ons in voor een groenere wereld en dragen ons steentje
+                bij aan het behoud van onze planeet.
               </p>
-              <ul className="space-y-3 text-gray-600">
+              <Link
+                href="/#duurzaamheid"
+                className="inline-block px-6 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
+              >
+                Over duurzaamheid
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Diensten Section */}
+      <section id="diensten" className="py-16 md:py-24 bg-gray-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-xl md:text-2xl font-bold text-navy mb-4">
+              Onze diensten
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Dynet is een Nederlands bedrijf dat gespecialiseerd is in de aanleg
+              van glasvezel aansluitingen. Of het nu om ontwerp, realisatie,
+              onderhoud of demontage gaat, dankzij onze complete dienstverlening
+              staan we midden in het proces.
+            </p>
+            <Link
+              href="/#diensten"
+              className="inline-block mt-4 px-6 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
+            >
+              Meer over onze diensten
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Civiele Werkzaamheden",
+                desc: "Wij voeren alle graaf- en plaatsingswerkzaamheden uit om de o.a. kabels te kunnen leggen voor o.a glasvezelaansluitingen.",
+              },
+              {
+                title: "Kopertechniek",
+                desc: "Wij verzorgen de aanleg en installatie van koperen leidingen voor o.a de ouderwetse coax-aansluiting en telefoonaansluitingen.",
+              },
+              {
+                title: "HFC-techniek",
+                desc: "HFC is een netwerk met een combinatie van glasvezel en coax. Bij een HFC-netwerk zijn de core-verbindingen van glasvezelkabels.",
+              },
+              {
+                title: "Mobiele techniek",
+                desc: "Wij verzorgen de aanleg en installatie van mobiele netwerken. Denk aan aansluitingen en masten in binnen- en buitengebieden.",
+              },
+              {
+                title: "Glasvezel (FttH)",
+                desc: "Fiber-to-the-Home aansluitingen voor woningen en bedrijven. Van centrumgebieden tot buitenwijken.",
+              },
+              {
+                title: "Dynet Electric",
+                desc: "Onze elektro-ingenieursafdeling voor laadoplossingen, lichttechniek en elektrische installaties.",
+              },
+            ].map((dienst) => (
+              <div
+                key={dienst.title}
+                className="bg-cream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <h4 className="text-lg font-bold text-navy mb-3">
+                  {dienst.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {dienst.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projecten Section */}
+      <section id="projecten" className="py-16 md:py-24 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold text-navy mb-6">
+                Onze projecten
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Dynet is gespecialiseerd in de aanleg van glasvezel, mobiele
+                aansluitingen en allerlei soorten kabel verbindingen. Wij werken
+                in de volgende gebieden:
+              </p>
+              <ul className="space-y-2 text-gray-600">
                 {[
-                  "Conditie bepalen van de bestaande lichtarmaturen",
-                  "Openbare verlichting installeren en vervangen",
-                  "Vervanging van lampen in totale groepen",
-                  "Controles uitvoeren aan de openbare verlichting",
-                  "Onderhoud en Storing",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  "Amsterdam",
+                  "Rotterdam",
+                  "Utrecht",
+                  "Wageningen",
+                  "Zwolle",
+                  "Drachten",
+                  "Heerenveen",
+                  "Winsum",
+                  "Groningen",
+                  "Rotterdam Maasvlakte",
+                ].map((city) => (
+                  <li key={city} className="flex items-center gap-2">
                     <svg
-                      className="w-5 h-5 text-green mt-0.5 shrink-0"
+                      className="w-4 h-4 text-green shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
                       <path
                         fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                         clipRule="evenodd"
                       />
                     </svg>
-                    {item}
+                    {city}
                   </li>
                 ))}
               </ul>
+              <Link
+                href="/projecten"
+                className="inline-block mt-6 px-6 py-3 bg-green text-white rounded font-medium hover:bg-green-light transition-colors"
+              >
+                Meer over onze projecten
+              </Link>
+            </div>
+            <div>
+              <Image
+                src="/images/kaart-nederland.png"
+                alt="Werkgebied Nederland"
+                width={600}
+                height={700}
+                className="w-full max-w-md mx-auto"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-green">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Bent u opzoek naar een samenwerking?
-          </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Neem contact met ons op voor een vrijblijvend gesprek over uw project
-            of stuur een e-mail naar{" "}
-            <a href="mailto:info@dynet.nl" className="underline font-semibold">
-              info@dynet.nl
-            </a>
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="px-8 py-3.5 bg-white text-green rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg"
-            >
-              Contact opnemen
-            </Link>
-            <a
-              href="tel:0852224002"
-              className="px-8 py-3.5 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors text-lg"
-            >
-              085-2224002
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Dark spacer */}
+      <section className="py-12 bg-navy" />
     </>
   );
 }
