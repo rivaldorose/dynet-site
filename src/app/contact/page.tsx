@@ -48,7 +48,7 @@ export default function ContactPage() {
             <div className="bg-navy rounded-lg p-6 text-white">
               <h3 className="font-bold text-lg mb-3">E-mail</h3>
               <p className="text-gray-300 text-sm">
-                U kunt een e-mail sturen naar
+                Uw kunt een e-mail sturen naar
               </p>
               <a
                 href="mailto:info@dynet.nl"
@@ -85,9 +85,10 @@ export default function ContactPage() {
           </h3>
           <p className="text-gray-600 leading-relaxed mb-4">
             U kunt eenvoudig contact opnemen met Dynet Infratechniek via
-            telefoon, e-mail of door het invullen van het contactformulier. Ons
-            toegewijde team staat klaar om al uw vragen te beantwoorden. Bij ons
-            kunt u terecht voor diverse onderwerpen, waaronder:
+            telefoon, e-mail of door het invullen van het contactformulier naast
+            deze tekst. Ons toegewijde team staat klaar om al uw vragen te
+            beantwoorden. Bij ons kunt u terecht voor diverse onderwerpen,
+            waaronder:
           </p>
           <ul className="space-y-1 text-gray-600 mb-6">
             {["Algemene vragen", "Facturatie", "Project aanvragen", "Vacatures"].map(

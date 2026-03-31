@@ -45,26 +45,35 @@ export default function DynetElectricPage() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 <strong className="text-green">DYNET ELECTRIC</strong> is de
                 elektro-ingenieursafdeling van{" "}
-                <strong>DYNET INFRATECHNIEK</strong>. Zij zorgt voor oplossingen
+                <strong className="text-navy">DYNET INFRATECHNIEK</strong>. Zij zorgt voor oplossingen
                 in de vraag naar elektrische installatiemogelijkheden voor de
                 particulieren als voor de zakelijke markt.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Door de oplopende vraag en belangstelling voor de hedendaagse en
                 toekomstige energietransitie, die Nederland fossielbrandstof vrij
-                moet maken, heeft <strong>DYNET ELECTRIC</strong> zich
+                moet maken, heeft{" "}
+                <strong className="text-green">DYNET ELECTRIC</strong> zich
                 toegespitst om deze vraagstelling eigen te maken en hiervoor de
-                kennis en kunde te gebruiken om de toenemende vraag naar een
-                fossielbrandstof vrij Nederland te beantwoorden.
+                kennis en kunde van{" "}
+                <strong className="text-green">DYNET ELECTRIC</strong>{" "}
+                te gebruiken om de toenemende vraag naar een fossielbrandstof vrij
+                Nederland te beantwoorden. Het beantwoorden van de toenemende
+                vraag naar een fossielbrandstof vrij Nederland, doet{" "}
+                <strong className="text-green">DYNET ELECTRIC</strong>{" "}
+                doormiddel van het toepassen van haar kennis en kunde in het
+                uitvoeren van de energietransitie vraagstukken, die de
+                particuliere en de zakelijke markt van Nederland vraagt.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 <strong className="text-green">DYNET ELECTRIC</strong> bestaat
                 uit ingenieurs, maar ook uit gespecialiseerde elektromonteurs,
                 die voldoen aan de huidige NEN 1010 en NEN 3410 voorwaarden.
-                Hierdoor valt de door DYNET ELECTRIC geleverde, geïnstalleerde
-                en gebruiksklaar gemaakte elektrische laadinstallatie binnen de
-                eisen die verzekeraars stellen omtrent het veilig opleveren van
-                de elektrische laadinstallaties.
+                Hierdoor valt de door{" "}
+                <strong className="text-green">DYNET ELECTRIC</strong> geleverde,
+                ge&iuml;nstalleerde en gebruiksklaar gemaakte elektrische
+                laadinstallatie binnen de eisen die verzekeraars stellen omtrent
+                het veilig opleveren van de elektrische laadinstallaties.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Bent u opzoek naar een samenwerking, dan kunt u een e-mail
@@ -141,14 +150,14 @@ export default function DynetElectricPage() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Energie zuinige LED is het antwoord op het verduurzamen van het
                 openbare lichtnetwerk van Nederland, hierdoor wordt de bestaande
-                openbare lichtarmaturen (straatverlichting) vervangen door de
+                openbare lichtarmaturen(straatverlichting) vervangen door de
                 energie zuinige Ledverlichting. Het voordeel van Ledverlichting
                 is naast dat het aan het verduurzaming effect werkt, ook meer
                 voor een aangenaam en veilig gevoel op de openbare straat en weg
-                gaat creëren.
+                gaat cre&euml;ren.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Wij hebben hiervoor verschillende hoogwerkers, waardoor wij
+                Wij hebben hiervoor verschillende hoogwerkers , waardoor wij
                 gemakkelijk op een hoogte van 4 of 6 meter de lichtarmaturen
                 kunnen vervangen en onderhouden.
               </p>
@@ -157,7 +166,7 @@ export default function DynetElectricPage() {
               </p>
               <ul className="space-y-2 text-gray-600 list-disc list-inside">
                 <li>Conditie bepalen van de bestaande lichtarmaturen;</li>
-                <li>Openbare verlichting installeren en vervangen;</li>
+                <li>Openbare verlichting instaleren en vervangen;</li>
                 <li>Vervanging van lampen in totale groepen;</li>
                 <li>
                   Controles uitvoeren aan de openbare verlichting installaties.
@@ -192,16 +201,16 @@ export default function DynetElectricPage() {
                 van meer stroom op het elektriciteitsnetwerk. Deze toenemende
                 vraag naar meer stroom zorgt ervoor dat Nederland zich moet gaan
                 voorbereiden d.m.v. het bestaande stroomnetwerk te versterken,
-                dit wordt vakkundig &ldquo;elektro sanering&rdquo; genoemd.
+                dit wordt vakkundig &quot;<em>elektro sanering</em>&quot; genoemd.
               </p>
               <p className="text-gray-600 leading-relaxed">
                 Bij elektro sanering worden in Nederland alle bestaande
                 straatbekabelingen van de hoofddistributiekabel tot aan de
                 gebouwen d.m.v. het plaatsen van een aan de vraag bestendige
-                aftakmof gesaneerd en daar komt in plaats terug een dikkere koper
-                of aluminium kabel. De &ldquo;elektro sanering&rdquo; zorgt
-                ervoor dat Nederland voorbereid is op de toekomst van totale
-                onafhankelijkheid van gas.
+                aftakmof gesaneerd en daar komt in plaats terug een{" "}
+                <em>dikkere koper</em> of <em>aluminium</em> kabel. De &quot;<em>elektro
+                sanering</em>&quot; zorgt ervoor dat Nederland voorbereid is op
+                de toekomst van totale onafhankelijkheid van gas.
               </p>
             </div>
             <div>
@@ -274,22 +283,43 @@ export default function DynetElectricPage() {
                 verwarming van de radiatoren en warm tap water.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>All Electric:</strong> Bij All Electric wordt alles
-                aangestuurd door elektriciteit via de Hr-ketel. Om maximale
-                stroom te benutten worden de zonnepanelen direct op de Hr-ketel
-                aangesloten, zodat er geen onnodige energie terug geleverd wordt.
-                Dit zorgt voor een optimale dichte energiekring in het huis.
+                De <em>Water-Water techniek</em> wordt veelal gebruik gemaakt
+                wanneer er een warmtebron is aangebracht en deze het warme
+                bronwater omzet in warmte voor de radiatoren en voor warm tap
+                water.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>Hybride:</strong> Bij Hybride wordt één gedeelte
-                aangestuurd doormiddel van elektriciteit en het andere gedeelte
-                doormiddel van gas. Deze optie is nog steeds een veel toegepaste
-                methode bij voornamelijk renovatie projecten van de woningbouw.
+                Voor het omzetten van deze bovengenoemde warmtepomp technieken
+                heb je een keuze uit twee soorten hoge rendement ketels:
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>All Electric:</strong>
+                <br /><br />
+                Bij All Electric wordt alles aangestuurd door elektriciteit via
+                de Hr-ketel. De Hr-Ketel wordt hiervoor aangesloten op het thuis
+                elektranetwerk. Om maximale stroom te benutten worden de
+                zonnepanelen direct op de Hr-ketel aangesloten, zodat er geen
+                onnodige energie terug geleverd wordt aan de
+                energie/netbeheerder. Dit zorgt voor een optimale dichte
+                energiekring in het huis, waardoor er een semi zelfvoorzienend
+                huis ontstaat. Deze optie wordt voornamelijk bij nieuwbouw
+                projecten toegepast.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>Hybride:</strong>
+                <br /><br />
+                Bij Hybride wordt &eacute;&eacute;n gedeelte aangestuurd
+                doormiddel van elektriciteit en het andere gedeelte doormiddel
+                van gas. Ondanks dat Nederland van het gas af moet, is deze optie
+                nog steeds een veel toegepaste methode bij voornamelijk renovatie
+                projecten van de woningbouw.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                <strong>Merken:</strong> Vliesmann, Remeha, Vaillant, NIBE,
-                Daikin, Panasonic, Itho Daalderop en Nefit Bosch, Intergas,
-                Junkers, Buderus, Inventum, Rotex, Elco, Hautec en SPRUN.
+                <strong>Merken:</strong>
+                <br /><br />
+                <strong>Vliesmann, Remeha, Vaillant, NIBE, Daikin, Panasonic,
+                Itho Daalderop en Nefit Bosch, Remeha, Intergas, Junkers,
+                Buderus, Inventum, Rotex, Elco, Hautec, Panasonic en SPRUN.</strong>
               </p>
             </div>
             <div className="space-y-6">

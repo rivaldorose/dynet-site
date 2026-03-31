@@ -38,6 +38,43 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label
+          htmlFor="subject"
+          className="block text-sm font-medium text-gray-700 mb-2"
+        >
+          Waarmee kunnen we u helpen? *
+        </label>
+        <select
+          id="subject"
+          name="subject"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+        >
+          <option value="">Selecteer een onderwerp</option>
+          <option value="algemeen">Algemene vraag</option>
+          <option value="offerte">Offerte aanvragen</option>
+          <option value="project">Project aanvraag</option>
+          <option value="facturatie">Facturatie</option>
+          <option value="vacature">Vacature</option>
+        </select>
+      </div>
+
+      <div>
+        <label
+          htmlFor="bedrijfsnaam"
+          className="block text-sm font-medium text-gray-700 mb-2"
+        >
+          Bedrijfsnaam
+        </label>
+        <input
+          type="text"
+          id="bedrijfsnaam"
+          name="bedrijfsnaam"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+        />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label
@@ -71,57 +108,37 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700 mb-2"
-        >
-          E-mailadres *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="phone"
-          className="block text-sm font-medium text-gray-700 mb-2"
-        >
-          Telefoonnummer
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="subject"
-          className="block text-sm font-medium text-gray-700 mb-2"
-        >
-          Onderwerp *
-        </label>
-        <select
-          id="subject"
-          name="subject"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-        >
-          <option value="">Selecteer een onderwerp</option>
-          <option value="algemeen">Algemene vraag</option>
-          <option value="offerte">Offerte aanvragen</option>
-          <option value="project">Project aanvraag</option>
-          <option value="facturatie">Facturatie</option>
-          <option value="vacature">Vacature</option>
-        </select>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            Telefoonnummer *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            E-mailadres *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+          />
+        </div>
       </div>
 
       <div>
@@ -129,7 +146,7 @@ export default function ContactForm() {
           htmlFor="message"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Bericht *
+          Uw vraag *
         </label>
         <textarea
           id="message"

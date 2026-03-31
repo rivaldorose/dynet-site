@@ -41,8 +41,10 @@ export default function ProjectenPage() {
               </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Dynet is gespecialiseerd in de aanleg van glasvezel, mobiele
-                aansluitingen en allerlei soorten kabel verbindingen. Wij zijn
-                actief in de volgende gebieden:
+                aanslutingen binnen Nederland Wij richten vooral op het
+                aansluiten van centrumgebieden en woonwijken en niet te vergeten
+                zakelijke panden. Het Dynet netwerk wordt steeds groter,
+                jaarlijks komen hier honderden kilomters bij.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[

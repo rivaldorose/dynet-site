@@ -50,8 +50,9 @@ export default function AfspraakMakenPage() {
                 Contact met Dynet
               </h3>
               <p className="text-gray-600 mb-6">
-                Heeft u vragen? U kunt ons gemakkelijk bereiken via telefoon of
-                e-mail.
+                Heeft u vragen? U kunt ons gemakkelijk bereiken via telefoon
+                tijdens kantooruren, e-mail. Wij staan klaar om al uw vragen te
+                beantwoorden en u te helpen met uw glasvezelaansluiting.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -74,10 +75,10 @@ export default function AfspraakMakenPage() {
                     U kunt ons ook een e-mail sturen naar
                   </p>
                   <a
-                    href="mailto:info@dynet.nl"
+                    href="mailto:contact@dynet.nl"
                     className="text-green font-semibold hover:underline"
                   >
-                    info@dynet.nl
+                    contact@dynet.nl
                   </a>
                 </div>
               </div>

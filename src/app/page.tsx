@@ -51,20 +51,19 @@ export default function Home() {
               <h3 className="text-xl md:text-2xl font-bold text-navy mb-6">
                 Wij leggen de verbinding van morgen
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-6">
                 Dynet is een vooraanstaand Nederlands bedrijf dat gespecialiseerd
                 is in het aanleggen van glasvezelverbindingen. Onze focus ligt
                 voornamelijk op het aansluiten van centrumgebieden en
                 woonwijken, waarbij we gebruikmaken van de Fiber-to-the-Home
                 technologie. Daarnaast zorgen we er doorgaans ook voor dat
                 zakelijke panden binnen het gebied worden aangesloten op ons
-                netwerk.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Onze missie is om heel Nederland te voorzien van snelle en
+                netwerk. Onze missie is om heel Nederland te voorzien van snelle en
                 betrouwbare verbindingen. We zijn van mening dat iedereen recht
                 heeft op toegang tot glasvezel, daarom streven we ernaar om niet
                 alleen centrumgebieden, maar ook buitengebieden aan te sluiten.
+                Op deze manier willen we ervoor zorgen dat iedereen kan profiteren
+                van de voordelen van glasvezel.
               </p>
               <Link
                 href="/#overons"
@@ -108,13 +107,25 @@ export default function Home() {
                 serieus. We zijn er trots op te kunnen zeggen dat ons pand
                 volledig klimaatneutraal is. Dit betekent dat we geen negatieve
                 invloed hebben op het klimaat met onze dagelijkse activiteiten.
+                Daarnaast streven we ernaar om onze projecten zo dicht mogelijk
+                bij huis te realiseren, zodat we niet ver hoeven te rijden. Dit
+                vermindert niet alleen de CO2-uitstoot, maar bespaart ook tijd
+                en kosten. Om ons personeel en materieel snel en effici&euml;nt te
+                vervoeren, maken we gebruik van bakfietsen voor korte afstanden.
+                Dit is niet alleen milieuvriendelijk, maar ook nog eens gezond
+                en praktisch.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Om ons personeel en materieel snel en efficiënt te vervoeren,
-                maken we gebruik van bakfietsen voor korte afstanden. We zijn
-                zelfs bezig met het overstappen naar elektrische en hybride
-                voertuigen. Op die manier minimaliseren we onze CO2-uitstoot en
-                dragen we bij aan een duurzame toekomst.
+                Maar dat is niet alles. Om onze impact op het milieu verder te
+                verminderen, stimuleren we onze werknemers om steeds vaker te
+                kiezen voor schonere auto&apos;s. We zijn zelfs bezig met het
+                overstappen naar elektrische en hybride voertuigen. Op die manier
+                minimaliseren we onze CO2-uitstoot en dragen we bij aan een
+                duurzame toekomst. Ook streven we ernaar om ons afval zoveel
+                mogelijk te hergebruiken en te recyclen. Op die manier voorkomen
+                we dat we grondstoffen en materialen uitputten. We zijn continu
+                op zoek naar innovatieve manieren om onze processen en
+                werkzaamheden nog duurzamer te maken.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Bij Dynet gaan we verder dan alleen zorgen voor tevreden klanten.
@@ -143,7 +154,8 @@ export default function Home() {
               Dynet is een Nederlands bedrijf dat gespecialiseerd is in de aanleg
               van glasvezel aansluitingen. Of het nu om ontwerp, realisatie,
               onderhoud of demontage gaat, dankzij onze complete dienstverlening
-              staan we midden in het proces.
+              op het gebied van gestructureerde netwerkbekabeling staan we midden
+              in het proces.
             </p>
             <Link
               href="/#diensten"
@@ -157,11 +169,11 @@ export default function Home() {
             {[
               {
                 title: "Civiele Werkzaamheden",
-                desc: "Wij voeren alle graaf- en plaatsingswerkzaamheden uit om de o.a. kabels te kunnen leggen voor o.a glasvezelaansluitingen.",
+                desc: "Wij voeren alle graaf- en plaatsingswerkzaamheden uit om de o.a. kabels te kunnen leggen voor o.a glasvezelaanslutingen.",
               },
               {
                 title: "Kopertechniek",
-                desc: "Wij verzorgen de aanleg en installatie van koperen leidingen voor o.a de ouderwetse coax-aansluiting en telefoonaansluitingen.",
+                desc: "Wij verzorgen de aanleg en installatie van koperen leidingen voor o.a de ouderwetse coax-aansluitng en telefoonaansluitingen.",
               },
               {
                 title: "HFC-techniek",
@@ -169,15 +181,15 @@ export default function Home() {
               },
               {
                 title: "Mobiele techniek",
-                desc: "Wij verzorgen de aanleg en installatie van mobiele netwerken. Denk aan aansluitingen en masten in binnen- en buitengebieden.",
+                desc: "Wij verzorgen de aanleg en installatie van mobiele netwerken . Denk aan aanslutingen en masten in binnen - en buitengebieden.",
               },
               {
-                title: "Glasvezel (FttH)",
-                desc: "Fiber-to-the-Home aansluitingen voor woningen en bedrijven. Van centrumgebieden tot buitenwijken.",
+                title: "Glasvezeltechniek",
+                desc: "Glasvezel is vezel van glas die zo dun is als een haar.Door deze vezel worden signalen en data geschoten met de snelheid van het licht.",
               },
               {
-                title: "Dynet Electric",
-                desc: "Onze elektro-ingenieursafdeling voor laadoplossingen, lichttechniek en elektrische installaties.",
+                title: "Preventief en correctief onderhoud",
+                desc: "Voor een continue en betrouwbare werking van het netwerk controleren aanslutingen, repareren en vervangen wij kabels waar nodig is.",
               },
             ].map((dienst) => (
               <div
@@ -206,8 +218,10 @@ export default function Home() {
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Dynet is gespecialiseerd in de aanleg van glasvezel, mobiele
-                aansluitingen en allerlei soorten kabel verbindingen. Wij werken
-                in de volgende gebieden:
+                aanslutingen binnen Nederland Wij richten vooral op het
+                aansluiten van centrumgebieden en woonwijken en niet te vergeten
+                zakelijke panden. Het Dynet netwerk wordt steeds groter,
+                jaarlijks komen hier honderden kilomters bij.
               </p>
               <ul className="space-y-2 text-gray-600">
                 {[

@@ -17,6 +17,22 @@ export default function AfspraakForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <div>
+        <label htmlFor="eigenaar" className="block text-sm font-medium text-gray-700 mb-1.5">
+          Eigenaar of huurder *
+        </label>
+        <select
+          id="eigenaar"
+          name="eigenaar"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+        >
+          <option value="">Selecteer...</option>
+          <option value="eigenaar">Eigenaar</option>
+          <option value="huurder">Huurder</option>
+        </select>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="voornaam" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -70,54 +86,71 @@ export default function AfspraakForm() {
         />
       </div>
 
-      <div>
-        <label htmlFor="adres" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Adres
-        </label>
-        <input
-          type="text"
-          id="adres"
-          name="adres"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-          placeholder="Straat + huisnummer"
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="straatnaam" className="block text-sm font-medium text-gray-700 mb-1.5">
+            Straatnaam *
+          </label>
+          <input
+            type="text"
+            id="straatnaam"
+            name="straatnaam"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+          />
+        </div>
+        <div>
+          <label htmlFor="huisnr" className="block text-sm font-medium text-gray-700 mb-1.5">
+            Huisnr &amp; toevoeging *
+          </label>
+          <input
+            type="text"
+            id="huisnr"
+            name="huisnr"
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="postcode" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Postcode
+            Postcode *
           </label>
           <input
             type="text"
             id="postcode"
             name="postcode"
+            required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
           />
         </div>
         <div>
-          <label htmlFor="plaats" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Plaats
+          <label htmlFor="woonplaats" className="block text-sm font-medium text-gray-700 mb-1.5">
+            Woonplaats *
           </label>
           <input
             type="text"
-            id="plaats"
-            name="plaats"
+            id="woonplaats"
+            name="woonplaats"
+            required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
           />
         </div>
       </div>
 
-      <div>
-        <label htmlFor="opmerking" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Opmerking
-        </label>
-        <textarea
-          id="opmerking"
-          name="opmerking"
-          rows={4}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors resize-none"
+      <div className="flex items-start gap-2">
+        <input
+          type="checkbox"
+          id="bevestigd"
+          name="bevestigd"
+          required
+          className="mt-1 h-4 w-4 accent-green"
         />
+        <label htmlFor="bevestigd" className="text-sm text-gray-700">
+          Ik bevestig dat bovenstaande gegevens correct zijn *
+        </label>
       </div>
 
       <button

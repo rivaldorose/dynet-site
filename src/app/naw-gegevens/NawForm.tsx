@@ -17,6 +17,20 @@ export default function NawForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <div>
+        <label htmlFor="ubent" className="block text-sm font-medium text-gray-700 mb-1.5">U bent *</label>
+        <select
+          id="ubent"
+          name="ubent"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
+        >
+          <option value="">Selecteer...</option>
+          <option value="eigenaar">Eigenaar</option>
+          <option value="huurder">Huurder</option>
+        </select>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="voornaam" className="block text-sm font-medium text-gray-700 mb-1.5">Voornaam *</label>
@@ -38,9 +52,15 @@ export default function NawForm() {
         <input type="tel" id="telefoon" name="telefoon" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
       </div>
 
-      <div>
-        <label htmlFor="straat" className="block text-sm font-medium text-gray-700 mb-1.5">Straat + huisnummer *</label>
-        <input type="text" id="straat" name="straat" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="straatnaam" className="block text-sm font-medium text-gray-700 mb-1.5">Straatnaam *</label>
+          <input type="text" id="straatnaam" name="straatnaam" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
+        </div>
+        <div>
+          <label htmlFor="huisnr" className="block text-sm font-medium text-gray-700 mb-1.5">Huisnr &amp; toevoeging *</label>
+          <input type="text" id="huisnr" name="huisnr" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -52,11 +72,6 @@ export default function NawForm() {
           <label htmlFor="woonplaats" className="block text-sm font-medium text-gray-700 mb-1.5">Woonplaats *</label>
           <input type="text" id="woonplaats" name="woonplaats" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="opmerking" className="block text-sm font-medium text-gray-700 mb-1.5">Opmerking</label>
-        <textarea id="opmerking" name="opmerking" rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors resize-none" />
       </div>
 
       <button
