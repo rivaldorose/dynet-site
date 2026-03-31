@@ -39,6 +39,10 @@ export default function DynetElectricPage() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Left column */}
             <div>
+              {/* Charging station icon */}
+              <svg className="w-10 h-10 text-green mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
               <h3 className="text-xl md:text-2xl font-bold text-navy mb-6">
                 Dynet Electric
               </h3>
@@ -114,12 +118,13 @@ export default function DynetElectricPage() {
                 </h4>
                 <div className="grid grid-cols-3 gap-4 mt-4">
                   {[
-                    { name: "Shell", logo: "/images/partners/shell.svg" },
-                    { name: "Alfen", logo: "/images/partners/alfen.svg" },
-                    { name: "BAM", logo: "/images/partners/bam.svg" },
-                    { name: "BMW", logo: "/images/partners/bmw.svg" },
+                    { name: "Alfen", logo: "/images/partners/alfen.png" },
                     { name: "Shell Recharge", logo: "/images/partners/shell-recharge.svg" },
+                    { name: "BMW", logo: "/images/partners/bmw.svg" },
                     { name: "Vestel", logo: "/images/partners/vestel.svg" },
+                    { name: "Eneco", logo: "/images/partners/eneco.webp" },
+                    { name: "Shell", logo: "/images/partners/shell.svg" },
+                    { name: "BAM", logo: "/images/partners/bam.svg" },
                   ].map((partner) => (
                     <div
                       key={partner.name}

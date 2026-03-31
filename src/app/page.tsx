@@ -43,6 +43,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Navy spacer */}
+      <section className="py-6 bg-navy" />
+
       {/* Over ons Section */}
       <section id="overons" className="py-16 md:py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
