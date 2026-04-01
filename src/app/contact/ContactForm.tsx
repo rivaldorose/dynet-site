@@ -15,23 +15,25 @@ export default function ContactForm() {
     }, 500);
   }
 
+  const labelStyle = {
+    fontFamily: "'PT Sans', sans-serif",
+    fontSize: 16,
+    fontWeight: 600,
+    color: "#000000",
+    marginBottom: 5,
+    display: "block" as const,
+  };
+
+  const requiredStyle = { color: "#2E9F48" };
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label
-          className="block text-sm font-medium text-white mb-2"
-        >
-          Waarmee kunnen we u helpen?
-        </label>
-        <div className="flex flex-wrap gap-4">
+        <span style={labelStyle}>Waarmee kunnen we u helpen?</span>
+        <div className="flex flex-wrap gap-4 mt-2">
           {["Facturatie", "Projecten", "Bezoek plannen"].map((option) => (
-            <label key={option} className="flex items-center gap-2 text-white text-sm cursor-pointer">
-              <input
-                type="checkbox"
-                name="subject"
-                value={option.toLowerCase()}
-                className="h-4 w-4 accent-green"
-              />
+            <label key={option} className="flex items-center gap-2 cursor-pointer" style={{ fontSize: 16, color: "#000000" }}>
+              <input type="checkbox" name="subject" value={option.toLowerCase()} className="h-4 w-4" />
               {option}
             </label>
           ))}
@@ -39,107 +41,54 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="bedrijfsnaam"
-          className="block text-sm font-medium text-white mb-2"
-        >
-          Bedrijfsnaam
+        <label htmlFor="bedrijfsnaam" style={labelStyle}>
+          Bedrijfsnaam <span style={requiredStyle}>*</span>
         </label>
-        <input
-          type="text"
-          id="bedrijfsnaam"
-          name="bedrijfsnaam"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-        />
+        <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Bedrijfsnaam" className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="firstName"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Voornaam *
+          <label htmlFor="firstName" style={labelStyle}>
+            Voornaam <span style={requiredStyle}>*</span>
           </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-          />
+          <input type="text" id="firstName" name="firstName" placeholder="Voornaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
         </div>
         <div>
-          <label
-            htmlFor="lastName"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Achternaam *
+          <label htmlFor="lastName" style={labelStyle}>
+            Achternaam <span style={requiredStyle}>*</span>
           </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-          />
+          <input type="text" id="lastName" name="lastName" placeholder="Voornaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            Telefoonnummer *
+          <label htmlFor="phone" style={labelStyle}>
+            Telefoonnummer <span style={requiredStyle}>*</span>
           </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-          />
+          <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-white mb-2"
-          >
-            E-mailadres *
+          <label htmlFor="email" style={labelStyle}>
+            E-mailadres <span style={requiredStyle}>*</span>
           </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors"
-          />
+          <input type="email" id="email" name="email" placeholder="E-mailadres" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
         </div>
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-white mb-2"
-        >
-          Uw vraag *
+        <label htmlFor="message" style={labelStyle}>
+          Uw vraag <span style={requiredStyle}>*</span>
         </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors resize-none"
-        />
+        <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none resize-none" />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-8 py-3.5 text-white rounded-lg font-semibold transition-colors text-lg disabled:opacity-50"
-        style={{ backgroundColor: "#2E9F48" }}
+        className="w-full py-3 text-white rounded font-semibold transition-colors disabled:opacity-50"
+        style={{ backgroundColor: "#2E9F48", fontSize: 16 }}
       >
         {loading ? "Bezig met verzenden..." : "Verzenden"}
       </button>
