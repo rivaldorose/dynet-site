@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Bedankt voor uw gegevens - Dynet Electric",
+  title: "Bedankt voor uw gegevens - Dynet Infratechniek",
 };
 
 export default function BedanktGegevensPage() {
@@ -36,7 +36,7 @@ export default function BedanktGegevensPage() {
           <div className="text-gray-600 leading-relaxed space-y-4">
             <p className="font-bold text-navy text-lg">Beste Bewoner,</p>
             <p>
-              Bedankt dat je jouw gegevens met ons hebt gedeeld. We hebben alles goed ontvangen en nemen zo snel mogelijk contact met je op om een afspraak te maken. Heb je in de tussentijd nog vragen of specifieke voorkeuren voor een datum en tijd? Laat het ons gerust weten via contact@dynet.nl of 085 222 4002 We kijken ernaar uit om je te spreken!
+              Bedankt dat je jouw gegevens met ons hebt gedeeld. We hebben alles goed ontvangen en nemen zo snel mogelijk contact met je op om een afspraak te maken. Heb je in de tussentijd nog vragen of specifieke voorkeuren voor een datum en tijd? Laat het ons gerust weten via info@dynet.nl of 085 222 4002 We kijken ernaar uit om je te spreken!
             </p>
             <p>Met vriendelijke groet,</p>
             <p className="font-bold text-navy">Het team van Dynet</p>

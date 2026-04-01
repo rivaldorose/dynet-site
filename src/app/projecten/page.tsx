@@ -58,6 +58,9 @@ export default function ProjectenPage() {
                   "Winsum",
                   "Groningen",
                   "Rotterdam Maasvlakte",
+                  "Zeist",
+                  "Amstelveen",
+                  "Surhuisterveen",
                 ].map((city) => (
                   <div key={city} className="flex items-center gap-2 text-gray-600">
                     <svg

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Bedankt - Dynet Electric",
+  title: "Bedankt - Dynet Infratechniek",
 };
 
 export default function BedanktPage() {
@@ -47,10 +47,10 @@ export default function BedanktPage() {
                 Uw kunt een e-mail sturen naar
               </p>
               <a
-                href="mailto:contact@dynet.nl"
+                href="mailto:info@dynet.nl"
                 className="text-white font-semibold hover:underline"
               >
-                contact@dynet.nl
+                info@dynet.nl
               </a>
             </div>
           </div>

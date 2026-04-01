@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Bedankt voor uw bericht - Dynet Electric",
+  title: "Bedankt voor uw bericht - Dynet Infratechniek",
 };
 
 export default function BedanktContactPage() {

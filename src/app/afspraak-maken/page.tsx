@@ -75,10 +75,10 @@ export default function AfspraakMakenPage() {
                     U kunt ons ook een e-mail sturen naar
                   </p>
                   <a
-                    href="mailto:contact@dynet.nl"
+                    href="mailto:info@dynet.nl"
                     className="text-green font-semibold hover:underline"
                   >
-                    contact@dynet.nl
+                    info@dynet.nl
                   </a>
                 </div>
               </div>
