@@ -668,39 +668,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 8: Opdrachtgevers carousel - simplified as static logos */}
-      <section
-        style={{
-          backgroundColor: "#FDFBF2",
-          padding: "20px 0 40px 0",
-        }}
-      >
-        <div className="mx-auto" style={{ maxWidth: 1297 }}>
-          <p
-            style={{
-              fontFamily: "'Roboto', sans-serif",
-              fontWeight: 600,
-              fontSize: 18,
-              color: "#000000",
-              marginBottom: 16,
-            }}
-          >
-            Onze opdrachtgevers zijn o.a.
-          </p>
-          <div className="flex flex-wrap items-center gap-8">
-            {["shell", "bmw", "alfen", "bam", "vestel"].map((partner) => (
-              <Image
-                key={partner}
-                src={`/images/partners/${partner}.svg`}
-                alt={partner}
-                width={100}
-                height={50}
-                style={{ height: 40, width: "auto", opacity: 0.7 }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
