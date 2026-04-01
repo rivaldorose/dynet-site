@@ -19,7 +19,7 @@ export default function ContactForm() {
     fontFamily: "'PT Sans', sans-serif",
     fontSize: 16,
     fontWeight: 600,
-    color: "#000000",
+    color: "#FFFFFF",
     marginBottom: 5,
     display: "block" as const,
   };
@@ -32,7 +32,7 @@ export default function ContactForm() {
         <span style={labelStyle}>Waarmee kunnen we u helpen?</span>
         <div className="flex flex-wrap gap-4 mt-2">
           {["Facturatie", "Projecten", "Bezoek plannen"].map((option) => (
-            <label key={option} className="flex items-center gap-2 cursor-pointer" style={{ fontSize: 16, color: "#000000" }}>
+            <label key={option} className="flex items-center gap-2 cursor-pointer" style={{ fontSize: 16, color: "#FFFFFF" }}>
               <input type="checkbox" name="subject" value={option.toLowerCase()} className="h-4 w-4" />
               {option}
             </label>

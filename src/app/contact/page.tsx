@@ -253,7 +253,9 @@ export default function ContactPage() {
           <div
             className="md:w-1/2"
             style={{
-              padding: "0 30px",
+              backgroundColor: "#11133D",
+              padding: 30,
+              borderRadius: 4,
             }}
           >
             <ContactForm />
