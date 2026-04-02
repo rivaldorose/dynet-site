@@ -6,19 +6,17 @@ export default function Home() {
     <>
       {/* Section 1: Hero Banner */}
       <section
-        className="relative bg-cover bg-center"
+        className="relative bg-cover bg-center pt-[60px] pb-[100px] md:pt-[150px] md:pb-[150px]"
         style={{
           backgroundImage: "url('/images/hero.jpg')",
-          paddingTop: 150,
-          paddingBottom: 150,
         }}
       >
-        <div className="text-center">
+        <div className="text-center px-4">
           <h2
+            className="text-[25px] md:text-[57px]"
             style={{
               fontFamily: "'PT Sans Caption', sans-serif",
               fontWeight: 700,
-              fontSize: 57,
               color: "#FFFFFF",
               margin: 0,
             }}
@@ -26,9 +24,8 @@ export default function Home() {
             DYNET INFRATECHNIEK
           </h2>
           <div
-            className="mx-auto"
+            className="mx-auto w-[85%] md:w-[58%]"
             style={{
-              width: "58%",
               marginTop: 16,
             }}
           >
@@ -102,9 +99,11 @@ export default function Home() {
       {/* Section 3: Over Ons */}
       <section
         id="overons"
+        className="px-4 md:px-0 md:pl-[70px]"
         style={{
           backgroundColor: "#FDFBF2",
-          padding: "50px 0 0 70px",
+          paddingTop: 50,
+          paddingBottom: 0,
           scrollMarginTop: 80,
         }}
       >
@@ -113,7 +112,7 @@ export default function Home() {
           style={{ maxWidth: 1300, gap: 10 }}
         >
           {/* Left Column */}
-          <div className="md:w-1/2" style={{ padding: 30 }}>
+          <div className="md:w-1/2" style={{ padding: "30px 15px" }}>
             <div className="icon-box-framed" style={{ marginBottom: 16 }}>
               <div className="icon-wrap" style={{ borderColor: "#11133D", color: "#11133D" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -161,7 +160,7 @@ export default function Home() {
 
           {/* Right Column */}
           <div
-            className="md:w-1/2 flex items-start"
+            className="md:w-1/2 flex items-start justify-center"
             style={{ marginTop: 10 }}
           >
             <Image
@@ -169,9 +168,9 @@ export default function Home() {
               alt="Glasvezelaanleg"
               width={700}
               height={700}
+              className="w-full md:w-[85%]"
               style={{
                 borderRadius: 35,
-                width: "85%",
                 height: "auto",
               }}
             />
@@ -181,6 +180,7 @@ export default function Home() {
 
       {/* Section 4: Dynet Electric (Image Left, Content Right) */}
       <section
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           marginTop: 20,
@@ -188,27 +188,27 @@ export default function Home() {
         }}
       >
         <div
-          className="mx-auto flex flex-col md:flex-row"
+          className="mx-auto flex flex-col-reverse md:flex-row"
           style={{ maxWidth: 1330, scrollMarginTop: 80 }}
           id="dynetelectric"
         >
           {/* Left Column - Image */}
-          <div className="md:w-1/2 flex items-start" style={{ marginTop: 50 }}>
+          <div className="md:w-1/2 flex items-start justify-center" style={{ marginTop: 50 }}>
             <Image
               src="/images/bus-ev.jpg"
               alt="Dynet Electric bus"
               width={700}
               height={500}
+              className="w-full md:w-[90%]"
               style={{
                 borderRadius: 35,
-                width: "90%",
                 height: "auto",
               }}
             />
           </div>
 
           {/* Right Column - Content */}
-          <div className="md:w-1/2" style={{ padding: 30 }}>
+          <div className="md:w-1/2" style={{ padding: "30px 15px" }}>
             <div className="icon-box-framed" style={{ marginBottom: 16 }}>
               <div className="icon-wrap" style={{ borderColor: "#2E9F48", color: "#2E9F48" }}>
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -313,6 +313,7 @@ export default function Home() {
       {/* Section 5: Duurzaamheid (Content Left, Image Right) */}
       <section
         id="duurzaamheid"
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           padding: "20px 0 40px 0",
@@ -324,7 +325,7 @@ export default function Home() {
           style={{ maxWidth: 1297 }}
         >
           {/* Left Column - Content */}
-          <div className="md:w-1/2" style={{ padding: "30px 30px 30px 0" }}>
+          <div className="md:w-1/2" style={{ padding: "30px 15px 30px 0" }}>
             <div className="icon-box-framed" style={{ marginBottom: 16 }}>
               <div className="icon-wrap" style={{ borderColor: "#11133D", color: "#11133D" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -404,7 +405,7 @@ export default function Home() {
 
           {/* Right Column - Image */}
           <div
-            className="md:w-1/2 flex items-start"
+            className="md:w-1/2 flex items-start justify-center"
             style={{ marginTop: 10 }}
           >
             <Image
@@ -412,9 +413,9 @@ export default function Home() {
               alt="Glasvezelaanleg"
               width={700}
               height={700}
+              className="w-full md:w-[85%]"
               style={{
                 borderRadius: 35,
-                width: "85%",
                 height: "auto",
               }}
             />
@@ -556,6 +557,7 @@ export default function Home() {
       {/* Section 7: Onze Projecten (CREAM background, not navy!) */}
       <section
         id="projecten"
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           padding: "20px 0 40px 0",
@@ -567,7 +569,7 @@ export default function Home() {
           style={{ maxWidth: 1297 }}
         >
           {/* Left Column */}
-          <div className="md:w-1/2" style={{ padding: "30px 30px 30px 0" }}>
+          <div className="md:w-1/2" style={{ padding: "30px 15px 30px 0" }}>
             <div className="icon-box-framed" style={{ marginBottom: 16 }}>
               <div className="icon-wrap" style={{ borderColor: "#11133D", color: "#11133D" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -656,13 +658,14 @@ export default function Home() {
           </div>
 
           {/* Right Column - Map */}
-          <div className="md:w-1/2 flex justify-center items-start">
+          <div className="md:w-1/2 flex justify-center items-start mt-8 md:mt-0">
             <Image
               src="/images/kaart-nederland.png"
               alt="Werkgebied Nederland"
               width={600}
               height={700}
-              style={{ width: "auto", maxHeight: 600 }}
+              className="w-full max-w-[300px] md:max-w-none"
+              style={{ height: "auto", maxHeight: 600 }}
             />
           </div>
         </div>

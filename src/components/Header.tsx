@@ -29,8 +29,8 @@ export default function Header() {
         className="mx-auto flex items-center"
         style={{ maxWidth: 1400, gap: 10, padding: "0" }}
       >
-        {/* Column 1 - Logo (11%) */}
-        <div className="shrink-0" style={{ width: "11%" }}>
+        {/* Column 1 - Logo */}
+        <div className="shrink-0 w-[100px] md:w-[11%]">
           <Link href="/">
             <Image
               src="/images/logo-infra.png"

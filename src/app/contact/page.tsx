@@ -13,10 +13,8 @@ export default function ContactPage() {
     <>
       {/* Hero with background image */}
       <section
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center pt-[120px] pb-[100px] md:pt-[230px] md:pb-[200px]"
         style={{
-          paddingTop: 230,
-          paddingBottom: 200,
           borderTop: "2px solid #2E9F48",
           borderBottom: "4px solid #2E9F48",
         }}
@@ -30,12 +28,12 @@ export default function ContactPage() {
           priority
         />
         <div className="absolute inset-0" style={{ backgroundColor: "#FDFBF2", opacity: 0.29 }} />
-        <div className="relative z-10 text-center w-full">
+        <div className="relative z-10 text-center w-full px-4">
           <h1
+            className="text-[30px] md:text-[45px]"
             style={{
               fontFamily: "'PT Sans Caption', sans-serif",
               fontWeight: 700,
-              fontSize: 45,
               color: "#11133D",
             }}
           >
@@ -47,13 +45,13 @@ export default function ContactPage() {
       {/* 4 Contact Info Cards */}
       <section style={{ backgroundColor: "#FDFBF2" }}>
         <div
-          className="mx-auto flex flex-col sm:flex-row"
+          className="mx-auto flex flex-col sm:flex-row flex-wrap"
           style={{
             maxWidth: 1170,
             marginTop: 5,
             marginBottom: 50,
             gap: 10,
-            padding: "0 3px",
+            padding: "0 15px",
           }}
         >
           {[
@@ -114,13 +112,12 @@ export default function ContactPage() {
           ].map((card) => (
             <div
               key={card.title}
-              className="flex-1"
+              className="flex-1 min-w-[250px]"
               style={{
                 backgroundColor: "#11133D",
                 borderRadius: 5,
                 border: "3px solid #2E9F48",
                 padding: 20,
-                marginRight: 10,
                 marginBottom: 20,
               }}
             >
@@ -147,7 +144,7 @@ export default function ContactPage() {
 
       {/* Contact info + icon box */}
       <section style={{ backgroundColor: "#FDFBF2", padding: "20px 0" }}>
-        <div className="mx-auto" style={{ maxWidth: 1300 }}>
+        <div className="mx-auto px-4" style={{ maxWidth: 1300 }}>
           <div className="icon-box-framed" style={{ marginBottom: 16, justifyContent: "center" }}>
             <div className="icon-wrap" style={{ borderColor: "#11133D", color: "#11133D" }}>
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -206,7 +203,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="mx-auto" style={{ width: "75%", textAlign: "center" }}>
+          <div className="mx-auto w-[90%] md:w-[75%]" style={{ textAlign: "center" }}>
             <p
               style={{
                 fontFamily: "Tahoma, Geneva, Verdana, sans-serif",
@@ -228,10 +225,12 @@ export default function ContactPage() {
 
       {/* Map + Form side by side */}
       <section
+        className="px-4 md:pl-[55px] md:pr-0"
         style={{
           backgroundColor: "#FDFBF2",
           borderBottom: "4px solid #2E9F48",
-          padding: "40px 0 40px 55px",
+          paddingTop: 40,
+          paddingBottom: 40,
         }}
       >
         <div

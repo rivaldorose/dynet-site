@@ -40,6 +40,7 @@ body {
   font-family: Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   line-height: 1.3em;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {

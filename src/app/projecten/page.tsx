@@ -46,7 +46,7 @@ export default function ProjectenPage() {
                 zakelijke panden. Het Dynet netwerk wordt steeds groter,
                 jaarlijks komen hier honderden kilomters bij.
               </p>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Amsterdam",
                   "Rotterdam",

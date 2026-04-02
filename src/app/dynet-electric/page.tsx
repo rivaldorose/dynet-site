@@ -13,26 +13,24 @@ export default function DynetElectricPage() {
     <>
       {/* Hero - same background as homepage hero */}
       <section
-        className="relative bg-cover bg-center"
+        className="relative bg-cover bg-center pt-[60px] pb-[100px] md:pt-[150px] md:pb-[150px]"
         style={{
           backgroundImage: "url('/images/hero.jpg')",
-          paddingTop: 150,
-          paddingBottom: 150,
         }}
       >
-        <div className="text-center">
+        <div className="text-center px-4">
           <h1
+            className="text-[25px] md:text-[57px]"
             style={{
               fontFamily: "'PT Sans Caption', sans-serif",
               fontWeight: 700,
-              fontSize: 57,
               color: "#FFFFFF",
               margin: 0,
             }}
           >
             DYNET ELECTRIC
           </h1>
-          <div className="mx-auto" style={{ width: "58%", marginTop: 16 }}>
+          <div className="mx-auto w-[85%] md:w-[58%]" style={{ marginTop: 16 }}>
             <p
               style={{
                 fontFamily: "'PT Sans', sans-serif",
@@ -53,6 +51,7 @@ export default function DynetElectricPage() {
       {/* Section 2: Dynet Electric Info (Two Column) */}
       <section
         id="dynetelectric"
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           borderBottom: "4px solid #2E9F48",
@@ -228,6 +227,7 @@ export default function DynetElectricPage() {
 
       {/* Section 3: Lichttechniek */}
       <section
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           borderBottom: "4px solid #2E9F48",
@@ -322,6 +322,7 @@ export default function DynetElectricPage() {
 
       {/* Additional sections below (sanering, warmtepompen) use same pattern */}
       <section
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           borderBottom: "4px solid #2E9F48",
@@ -391,6 +392,7 @@ export default function DynetElectricPage() {
       </section>
 
       <section
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           borderBottom: "4px solid #2E9F48",
@@ -457,6 +459,7 @@ export default function DynetElectricPage() {
       </section>
 
       <section
+        className="px-4 md:px-0"
         style={{
           backgroundColor: "#FDFBF2",
           padding: "20px 0 40px 0",

@@ -10,10 +10,13 @@ export default function Footer() {
 
       {/* Footer content */}
       <div
+        className="border-l-0 border-r-0 md:border-l-[20px] md:border-r-[20px]"
         style={{
           backgroundColor: "#FDFBF2",
-          borderLeft: "20px solid #11133D",
-          borderRight: "20px solid #11133D",
+          borderColor: "#11133D",
+          borderStyle: "solid",
+          borderTopWidth: 0,
+          borderBottomWidth: 0,
         }}
       >
         <div
@@ -21,7 +24,7 @@ export default function Footer() {
           style={{
             maxWidth: 1400,
             minHeight: 150,
-            padding: "30px 36px 20px",
+            padding: "30px 20px 20px",
           }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-start">
@@ -216,12 +219,15 @@ export default function Footer() {
 
       {/* Bottom copyright bar */}
       <div
+        className="border-l-0 border-r-0 md:border-l-[20px] md:border-r-[20px]"
         style={{
           backgroundColor: "#FDFBF2",
-          borderLeft: "20px solid #11133D",
-          borderRight: "20px solid #11133D",
-          borderTop: "1px solid rgba(3,53,55,0.2)",
-          padding: "12px 36px",
+          borderColor: "#11133D",
+          borderStyle: "solid",
+          borderTopWidth: 1,
+          borderTopColor: "rgba(3,53,55,0.2)",
+          borderBottomWidth: 0,
+          padding: "12px 20px",
           textAlign: "center",
         }}
       >
