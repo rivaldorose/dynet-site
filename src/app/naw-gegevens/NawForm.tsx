@@ -37,6 +37,15 @@ export default function NawForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+      />
       <div>
         <label htmlFor="ubent" className="block text-sm font-medium text-gray-700 mb-1.5">U bent *</label>
         <select

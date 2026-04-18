@@ -1,9 +1,24 @@
 import { NextResponse } from "next/server";
 import { getResend, EMAIL_TO, EMAIL_FROM } from "@/lib/resend";
+import { escapeHtml, checkRateLimit, getClientIp, isHoneypotFilled } from "@/lib/security";
 
 export async function POST(request: Request) {
   try {
+    const ip = getClientIp(request);
+    const rate = checkRateLimit(ip);
+    if (!rate.ok) {
+      return NextResponse.json(
+        { error: "Te veel aanvragen, probeer het later opnieuw" },
+        { status: 429, headers: { "Retry-After": String(rate.retryAfter) } }
+      );
+    }
+
     const data = await request.json();
+
+    if (isHoneypotFilled(data)) {
+      return NextResponse.json({ success: true });
+    }
+
     const {
       ubent,
       voornaam,
@@ -25,14 +40,14 @@ export async function POST(request: Request) {
 
     const html = `
       <h2>Nieuwe NAW gegevens ingediend (via QR code)</h2>
-      <p><strong>U bent:</strong> ${ubent || "-"}</p>
-      <p><strong>Naam:</strong> ${voornaam} ${achternaam}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Telefoon:</strong> ${telefoon || "-"}</p>
+      <p><strong>U bent:</strong> ${escapeHtml(ubent || "-")}</p>
+      <p><strong>Naam:</strong> ${escapeHtml(voornaam)} ${escapeHtml(achternaam)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>Telefoon:</strong> ${escapeHtml(telefoon || "-")}</p>
       <hr>
       <p><strong>Adres:</strong><br>
-      ${straatnaam || "-"} ${huisnr || ""}<br>
-      ${postcode || "-"} ${woonplaats || "-"}</p>
+      ${escapeHtml(straatnaam || "-")} ${escapeHtml(huisnr || "")}<br>
+      ${escapeHtml(postcode || "-")} ${escapeHtml(woonplaats || "-")}</p>
     `;
 
     const { error } = await getResend().emails.send({

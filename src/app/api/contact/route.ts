@@ -1,9 +1,25 @@
 import { NextResponse } from "next/server";
 import { getResend, EMAIL_TO, EMAIL_FROM } from "@/lib/resend";
+import { escapeHtml, checkRateLimit, getClientIp, isHoneypotFilled } from "@/lib/security";
 
 export async function POST(request: Request) {
   try {
+    const ip = getClientIp(request);
+    const rate = checkRateLimit(ip);
+    if (!rate.ok) {
+      return NextResponse.json(
+        { error: "Te veel aanvragen, probeer het later opnieuw" },
+        { status: 429, headers: { "Retry-After": String(rate.retryAfter) } }
+      );
+    }
+
     const data = await request.json();
+
+    if (isHoneypotFilled(data)) {
+      // Bot — fake success, log niks en verstuur niks
+      return NextResponse.json({ success: true });
+    }
+
     const {
       bedrijfsnaam,
       voornaam,
@@ -23,14 +39,14 @@ export async function POST(request: Request) {
 
     const html = `
       <h2>Nieuw contactformulier ingediend</h2>
-      <p><strong>Onderwerpen:</strong> ${onderwerpen?.join(", ") || "-"}</p>
-      <p><strong>Bedrijfsnaam:</strong> ${bedrijfsnaam || "-"}</p>
-      <p><strong>Naam:</strong> ${voornaam} ${achternaam}</p>
-      <p><strong>Telefoon:</strong> ${telefoon || "-"}</p>
-      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Onderwerpen:</strong> ${escapeHtml(onderwerpen?.join(", ") || "-")}</p>
+      <p><strong>Bedrijfsnaam:</strong> ${escapeHtml(bedrijfsnaam || "-")}</p>
+      <p><strong>Naam:</strong> ${escapeHtml(voornaam)} ${escapeHtml(achternaam)}</p>
+      <p><strong>Telefoon:</strong> ${escapeHtml(telefoon || "-")}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
       <hr>
       <p><strong>Vraag:</strong></p>
-      <p>${vraag.replace(/\n/g, "<br>")}</p>
+      <p>${escapeHtml(vraag).replace(/\n/g, "<br>")}</p>
     `;
 
     const { error } = await getResend().emails.send({

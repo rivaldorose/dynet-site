@@ -29,6 +29,7 @@ export default function ContactForm() {
       telefoon: formData.get("phone"),
       email: formData.get("email"),
       vraag: formData.get("message"),
+      website: formData.get("website"), // honeypot
     };
 
     try {
@@ -63,6 +64,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Honeypot - bots vullen dit in, mensen niet */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+      />
       <div>
         <span style={labelStyle}>Waarmee kunnen we u helpen?</span>
         <div className="flex flex-wrap gap-4 mt-2">
