@@ -161,17 +161,32 @@ export default function AfspraakForm() {
         </div>
       </div>
 
-      <div className="flex items-start gap-2">
-        <input
-          type="checkbox"
-          id="bevestigd"
-          name="bevestigd"
-          required
-          className="mt-1 h-4 w-4 accent-green"
-        />
-        <label htmlFor="bevestigd" className="text-sm text-gray-700">
-          Ik bevestig dat bovenstaande gegevens correct zijn *
-        </label>
+      <div>
+        <p className="text-base font-semibold text-navy mb-3">
+          Bevestig jij de afspraak? *
+        </p>
+        <div className="flex gap-6">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="bevestiging"
+              value="Ja"
+              required
+              className="h-4 w-4 accent-green"
+            />
+            <span className="text-base text-gray-700">Ja</span>
+          </label>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="radio"
+              name="bevestiging"
+              value="Nee"
+              required
+              className="h-4 w-4 accent-green"
+            />
+            <span className="text-base text-gray-700">Nee</span>
+          </label>
+        </div>
       </div>
 
       {error && (
@@ -185,7 +200,7 @@ export default function AfspraakForm() {
         disabled={loading}
         className="w-full px-8 py-3.5 bg-green text-white rounded-lg font-semibold hover:bg-green-light transition-colors text-lg disabled:opacity-50"
       >
-        {loading ? "Bezig met versturen..." : "Afspraak maken"}
+        {loading ? "Bezig met versturen..." : "Verzenden"}
       </button>
     </form>
   );
