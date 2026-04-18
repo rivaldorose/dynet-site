@@ -10,7 +10,6 @@ export function escapeHtml(value: unknown): string {
 }
 
 // Rate limiting: simpele in-memory per-IP counter
-// Werkt per serverless instance, genoeg om basic bot-floods te stoppen
 const WINDOW_MS = 60 * 60 * 1000; // 1 uur
 const MAX_REQUESTS = 5; // max 5 per uur per IP
 
@@ -45,4 +44,49 @@ export function getClientIp(request: Request): string {
 export function isHoneypotFilled(data: Record<string, unknown>): boolean {
   const website = data.website;
   return typeof website === "string" && website.trim().length > 0;
+}
+
+// Origin check: alleen POST requests vanaf onze eigen site toestaan
+const ALLOWED_ORIGINS = [
+  "https://www.dynet.nl",
+  "https://dynet.nl",
+  "https://dynet-site.vercel.app",
+  "http://localhost:3000",
+];
+
+export function isAllowedOrigin(request: Request): boolean {
+  const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
+
+  // In development of vanaf Vercel preview
+  if (process.env.NODE_ENV !== "production") return true;
+
+  // Vercel preview deploys zijn toegestaan
+  if (origin?.endsWith(".vercel.app")) return true;
+  if (referer?.includes(".vercel.app")) return true;
+
+  if (origin && ALLOWED_ORIGINS.includes(origin)) return true;
+  if (referer && ALLOWED_ORIGINS.some((o) => referer.startsWith(o))) return true;
+
+  return false;
+}
+
+// Server-side validation helpers
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^[0-9+\-\s()]{6,20}$/;
+
+export function isValidEmail(email: unknown): email is string {
+  return typeof email === "string" && email.length <= 254 && EMAIL_REGEX.test(email);
+}
+
+export function isValidPhone(phone: unknown): phone is string {
+  return typeof phone === "string" && PHONE_REGEX.test(phone);
+}
+
+export function isValidText(value: unknown, maxLength = 500): value is string {
+  return typeof value === "string" && value.length > 0 && value.length <= maxLength;
+}
+
+export function isValidLongText(value: unknown, maxLength = 5000): value is string {
+  return typeof value === "string" && value.length > 0 && value.length <= maxLength;
 }

@@ -89,7 +89,7 @@ export default function ContactForm() {
         <label htmlFor="bedrijfsnaam" style={labelStyle}>
           Bedrijfsnaam <span style={requiredStyle}>*</span>
         </label>
-        <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Bedrijfsnaam" className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
+        <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Bedrijfsnaam" maxLength={200} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -97,13 +97,13 @@ export default function ContactForm() {
           <label htmlFor="firstName" style={labelStyle}>
             Voornaam <span style={requiredStyle}>*</span>
           </label>
-          <input type="text" id="firstName" name="firstName" placeholder="Voornaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
+          <input type="text" id="firstName" name="firstName" placeholder="Voornaam" required maxLength={100} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
         </div>
         <div>
           <label htmlFor="lastName" style={labelStyle}>
             Achternaam <span style={requiredStyle}>*</span>
           </label>
-          <input type="text" id="lastName" name="lastName" placeholder="Achternaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
+          <input type="text" id="lastName" name="lastName" placeholder="Achternaam" required maxLength={100} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
         </div>
       </div>
 
@@ -112,13 +112,13 @@ export default function ContactForm() {
           <label htmlFor="phone" style={labelStyle}>
             Telefoonnummer <span style={requiredStyle}>*</span>
           </label>
-          <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
+          <input type="tel" id="phone" name="phone" placeholder="Telefoonnummer" required maxLength={20} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
         </div>
         <div>
           <label htmlFor="email" style={labelStyle}>
             E-mailadres <span style={requiredStyle}>*</span>
           </label>
-          <input type="email" id="email" name="email" placeholder="E-mailadres" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
+          <input type="email" id="email" name="email" placeholder="E-mailadres" required maxLength={254} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none text-white placeholder-white/50 bg-transparent" />
         </div>
       </div>
 
@@ -126,7 +126,7 @@ export default function ContactForm() {
         <label htmlFor="message" style={labelStyle}>
           Uw vraag <span style={requiredStyle}>*</span>
         </label>
-        <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none resize-none text-white placeholder-white/50 bg-transparent" />
+        <textarea id="message" name="message" rows={4} required maxLength={5000} className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none resize-none text-white placeholder-white/50 bg-transparent" />
       </div>
 
       {error && (

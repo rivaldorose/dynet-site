@@ -1,9 +1,23 @@
 import { NextResponse } from "next/server";
 import { getResend, EMAIL_TO, EMAIL_FROM } from "@/lib/resend";
-import { escapeHtml, checkRateLimit, getClientIp, isHoneypotFilled } from "@/lib/security";
+import {
+  escapeHtml,
+  checkRateLimit,
+  getClientIp,
+  isHoneypotFilled,
+  isAllowedOrigin,
+  isValidEmail,
+  isValidText,
+  isValidLongText,
+  isValidPhone,
+} from "@/lib/security";
 
 export async function POST(request: Request) {
   try {
+    if (!isAllowedOrigin(request)) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
     const ip = getClientIp(request);
     const rate = checkRateLimit(ip);
     if (!rate.ok) {
@@ -16,7 +30,6 @@ export async function POST(request: Request) {
     const data = await request.json();
 
     if (isHoneypotFilled(data)) {
-      // Bot — fake success, log niks en verstuur niks
       return NextResponse.json({ success: true });
     }
 
@@ -30,16 +43,25 @@ export async function POST(request: Request) {
       onderwerpen,
     } = data;
 
-    if (!voornaam || !achternaam || !email || !vraag) {
-      return NextResponse.json(
-        { error: "Verplichte velden ontbreken" },
-        { status: 400 }
-      );
+    if (!isValidText(voornaam, 100) || !isValidText(achternaam, 100)) {
+      return NextResponse.json({ error: "Ongeldige naam" }, { status: 400 });
+    }
+    if (!isValidEmail(email)) {
+      return NextResponse.json({ error: "Ongeldig e-mailadres" }, { status: 400 });
+    }
+    if (telefoon && !isValidPhone(telefoon)) {
+      return NextResponse.json({ error: "Ongeldig telefoonnummer" }, { status: 400 });
+    }
+    if (!isValidLongText(vraag, 5000)) {
+      return NextResponse.json({ error: "Ongeldige vraag" }, { status: 400 });
+    }
+    if (bedrijfsnaam && typeof bedrijfsnaam === "string" && bedrijfsnaam.length > 200) {
+      return NextResponse.json({ error: "Bedrijfsnaam te lang" }, { status: 400 });
     }
 
     const html = `
       <h2>Nieuw contactformulier ingediend</h2>
-      <p><strong>Onderwerpen:</strong> ${escapeHtml(onderwerpen?.join(", ") || "-")}</p>
+      <p><strong>Onderwerpen:</strong> ${escapeHtml(Array.isArray(onderwerpen) ? onderwerpen.join(", ") : "-")}</p>
       <p><strong>Bedrijfsnaam:</strong> ${escapeHtml(bedrijfsnaam || "-")}</p>
       <p><strong>Naam:</strong> ${escapeHtml(voornaam)} ${escapeHtml(achternaam)}</p>
       <p><strong>Telefoon:</strong> ${escapeHtml(telefoon || "-")}</p>

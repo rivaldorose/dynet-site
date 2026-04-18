@@ -1,9 +1,22 @@
 import { NextResponse } from "next/server";
 import { getResend, EMAIL_TO, EMAIL_FROM } from "@/lib/resend";
-import { escapeHtml, checkRateLimit, getClientIp, isHoneypotFilled } from "@/lib/security";
+import {
+  escapeHtml,
+  checkRateLimit,
+  getClientIp,
+  isHoneypotFilled,
+  isAllowedOrigin,
+  isValidEmail,
+  isValidText,
+  isValidPhone,
+} from "@/lib/security";
 
 export async function POST(request: Request) {
   try {
+    if (!isAllowedOrigin(request)) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
     const ip = getClientIp(request);
     const rate = checkRateLimit(ip);
     if (!rate.ok) {
@@ -31,11 +44,14 @@ export async function POST(request: Request) {
       woonplaats,
     } = data;
 
-    if (!voornaam || !achternaam || !email) {
-      return NextResponse.json(
-        { error: "Verplichte velden ontbreken" },
-        { status: 400 }
-      );
+    if (!isValidText(voornaam, 100) || !isValidText(achternaam, 100)) {
+      return NextResponse.json({ error: "Ongeldige naam" }, { status: 400 });
+    }
+    if (!isValidEmail(email)) {
+      return NextResponse.json({ error: "Ongeldig e-mailadres" }, { status: 400 });
+    }
+    if (telefoon && !isValidPhone(telefoon)) {
+      return NextResponse.json({ error: "Ongeldig telefoonnummer" }, { status: 400 });
     }
 
     const html = `
