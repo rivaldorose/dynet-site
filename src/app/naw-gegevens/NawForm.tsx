@@ -6,13 +6,33 @@ import { useRouter } from "next/navigation";
 export default function NawForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/naw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Versturen mislukt");
+      }
+
       router.push("/bedankt-voor-uw-gegevens");
-    }, 500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Er ging iets mis");
+      setLoading(false);
+    }
   }
 
   return (
@@ -73,6 +93,12 @@ export default function NawForm() {
           <input type="text" id="woonplaats" name="woonplaats" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green focus:border-green outline-none transition-colors" />
         </div>
       </div>
+
+      {error && (
+        <div className="p-3 rounded" style={{ backgroundColor: "#fee", color: "#c00", fontSize: 14 }}>
+          {error}
+        </div>
+      )}
 
       <button
         type="submit"

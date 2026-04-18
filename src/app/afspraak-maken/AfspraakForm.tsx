@@ -7,12 +7,33 @@ export default function AfspraakForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/afspraak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Versturen mislukt");
+      }
+
       router.push("/bedankt");
-    }, 500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Er ging iets mis");
+      setLoading(false);
+    }
   }
 
   return (
@@ -152,6 +173,12 @@ export default function AfspraakForm() {
           Ik bevestig dat bovenstaande gegevens correct zijn *
         </label>
       </div>
+
+      {error && (
+        <div className="p-3 rounded" style={{ backgroundColor: "#fee", color: "#c00", fontSize: 14 }}>
+          {error}
+        </div>
+      )}
 
       <button
         type="submit"

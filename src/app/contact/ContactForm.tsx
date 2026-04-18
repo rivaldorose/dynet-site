@@ -6,13 +6,48 @@ import { useRouter } from "next/navigation";
 export default function ContactForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const onderwerpen: string[] = [];
+    formData.getAll("subject").forEach((v) => {
+      if (typeof v === "string") onderwerpen.push(v);
+    });
+
+    const payload = {
+      onderwerpen,
+      bedrijfsnaam: formData.get("bedrijfsnaam"),
+      voornaam: formData.get("firstName"),
+      achternaam: formData.get("lastName"),
+      telefoon: formData.get("phone"),
+      email: formData.get("email"),
+      vraag: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Versturen mislukt");
+      }
+
       router.push("/bedankt-contact");
-    }, 500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Er ging iets mis");
+      setLoading(false);
+    }
   }
 
   const labelStyle = {
@@ -33,7 +68,7 @@ export default function ContactForm() {
         <div className="flex flex-wrap gap-4 mt-2">
           {["Facturatie", "Projecten", "Bezoek plannen"].map((option) => (
             <label key={option} className="flex items-center gap-2 cursor-pointer" style={{ fontSize: 16, color: "#FFFFFF" }}>
-              <input type="checkbox" name="subject" value={option.toLowerCase()} className="h-4 w-4" />
+              <input type="checkbox" name="subject" value={option} className="h-4 w-4" />
               {option}
             </label>
           ))}
@@ -58,7 +93,7 @@ export default function ContactForm() {
           <label htmlFor="lastName" style={labelStyle}>
             Achternaam <span style={requiredStyle}>*</span>
           </label>
-          <input type="text" id="lastName" name="lastName" placeholder="Voornaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
+          <input type="text" id="lastName" name="lastName" placeholder="Achternaam" required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none" />
         </div>
       </div>
 
@@ -83,6 +118,12 @@ export default function ContactForm() {
         </label>
         <textarea id="message" name="message" rows={4} required className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-green outline-none resize-none" />
       </div>
+
+      {error && (
+        <div className="p-3 rounded" style={{ backgroundColor: "#fee", color: "#c00", fontSize: 14 }}>
+          {error}
+        </div>
+      )}
 
       <button
         type="submit"
