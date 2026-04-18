@@ -175,6 +175,7 @@ export default function Footer() {
                   { label: "Diensten", href: "/#diensten" },
                   { label: "Projecten", href: "/#projecten" },
                   { label: "Contact", href: "/contact" },
+                  { label: "Afspraak maken", href: "/afspraak-maken" },
                 ].map((item) => (
                   <li key={item.label} className="flex items-center gap-2" style={{ marginBottom: 6 }}>
                     <svg className="shrink-0" style={{ width: 14, height: 14, color: "#2E9F48" }} fill="currentColor" viewBox="0 0 20 20">
