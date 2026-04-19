@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:prod": "PLAYWRIGHT_BASE_URL=https://www.dynet.nl playwright test",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
     "next": "16.2.1",
@@ -15,6 +20,7 @@
     "resend": "^6.12.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
